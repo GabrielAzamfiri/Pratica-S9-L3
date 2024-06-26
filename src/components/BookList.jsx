@@ -23,7 +23,8 @@ class BookList extends Component  {
         />
       </InputGroup>
       
-        {/* faccio il map su state[nome array passato tramite props] */}
+        {/* faccio un filtro che controlla se nel titolo dei vari libri è incusa la striga che ho in state.ricerca */}
+        {/* se passa la condizione mi faccio un map del nuovo array e ci creo le carte */}
         {this.state.ricerca ? this.props.category.filter(libro=>libro.title.toLowerCase().includes(this.state.ricerca.toLowerCase())).map(book => {
             
             return (
@@ -31,7 +32,7 @@ class BookList extends Component  {
               <SingleBook book={book}/>
             )})
             
-          
+          // altrimenti creo tutte le carte della categoria
            : this.props.category.map(book => {
             
             return (
