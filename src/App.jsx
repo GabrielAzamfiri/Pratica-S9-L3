@@ -1,17 +1,26 @@
 import { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./App.css";
 import TopBar from "./components/TopBar";
 import MyFooter from "./components/MyFooter";
 import Welcome from "./components/Welcome";
-import AllTheBooks from "./components/AllTheBooks";
+import BookList from "./components/BookList";
 
-
+// **************file di libri****************
+import fantasy from "../src/data/books/fantasy.json";
+import horror from "../src/data/books/horror.json"
+import history from "../src/data/books/history.json"
+import scifi from "../src/data/books/scifi.json"
+import romance from "../src/data/books/romance.json"
 
 class App extends Component {
   state = {
     categoria: "fantasy",
+    horror:[...horror],
+    history:[...history] ,
+    scifi: [...scifi],
+    fantasy:[...fantasy],
+    romance:[...romance] 
   };
   
   // funzione che modifica lo state categoria grazie al eventKey
@@ -25,7 +34,7 @@ class App extends Component {
         <TopBar setCategory={this.selectCategory} />
         <Welcome />
         {/* passo come props lo state.catogoria cosi da avere l'array di film in base alla selezione del dropdown */}
-        <AllTheBooks category={this.state.categoria} />
+        <BookList category={this.state[this.state.categoria]} />
         <MyFooter />
       </div>
     );
