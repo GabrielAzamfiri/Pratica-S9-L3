@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, InputGroup, Row } from "react-bootstrap";
+import { Container, Form, InputGroup, Row } from "react-bootstrap";
 import SingleBook from "./SingleBook";
 
 
@@ -13,12 +13,14 @@ class BookList extends Component  {
   render() {
     
     return (
+      <Container>
+
       <Row>
-        <InputGroup size="sm" className="mb-3">
-        <InputGroup.Text id="inputGroup-sizing-sm">Cerca Libro</InputGroup.Text>
+        <InputGroup size="default" className="my-5">
+        <InputGroup.Text id="inputGroup-sizing-default">Cerca Libro</InputGroup.Text>
         <Form.Control
-          aria-label="Small"
-          aria-describedby="inputGroup-sizing-sm"
+          aria-label="default"
+          aria-describedby="inputGroup-sizing-default"
           onChange={e => this.setState({ricerca :  e.target.value  })}
         />
       </InputGroup>
@@ -40,6 +42,7 @@ class BookList extends Component  {
             );
           })}
       </Row>
+      </Container>
     );
   }
 }

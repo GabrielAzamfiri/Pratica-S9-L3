@@ -10,12 +10,12 @@ function TopBar(props) {
   return (
     <Nav variant="pills" activeKey="1" onSelect={handleSelect}>
       <Nav.Item>
-        <Nav.Link eventKey="1" href="#/home">
+        <Nav.Link eventKey="1" href="#/home" disabled>
           Home
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey="2" title="Item">
+        <Nav.Link eventKey="2" title="Item" disabled>
           About
         </Nav.Link>
       </Nav.Item>

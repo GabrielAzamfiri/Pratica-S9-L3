@@ -11,7 +11,7 @@ class SingleBook extends Component {
   render() {
     return (
       <Col sm={4} md={3} lg={2} key={`book-${this.props.book.asin}`}>
-        <Card onClick={this.selezionato} className={this.state.selected ? "border border-info" : "border-none"}>
+        <Card onClick={this.selezionato} className={this.state.selected ? "border border-info bg-black" : "border-none"}>
           <Card.Img variant="top" src={this.props.book.img}  />
           <Card.Body>
             <Card.Title className="text-truncate">{this.props.book.title}</Card.Title>

@@ -32,7 +32,7 @@ class App extends Component {
       <div className="App">
         {/* do la funzione selectCategory come props cosi da chiamarla dentro TopBar e farle avere eventKey come dato */}
         <TopBar setCategory={this.selectCategory} />
-        <Welcome />
+        <Welcome category={this.state.categoria}/>
         {/* passo come props lo state.catogoria cosi da avere l'array di film in base alla selezione del dropdown */}
         <BookList category={this.state[this.state.categoria]} />
         <MyFooter />
